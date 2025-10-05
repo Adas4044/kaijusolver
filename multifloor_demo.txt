@@ -1,6 +1,6 @@
 [
     ["C_B_S", "BU2", "B2",  "E",  "B",  "BS",    "OUT" ],
-    ["OUT",   "BU",  "E",   "R",  "B2", "C_R_E", "UI_R"],
+    ["OUT",   "BU",  "E",   "R",  "B2", "BU",    "UI_R"],
     ["C_R_S", "B2",  "BU2", "R",  "S1", "BU",    "UI_G"],
     ["OUT",   "BU2", "BS",  "E",  "S2", "E",     "UI_B"],
     ["C_G_S", "B",   "B2",  "E",  "B",  "B2",    "OUT" ]
