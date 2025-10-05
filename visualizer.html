@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Kaiju Simulator Visualizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .controls {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .slider-container {
+            margin-bottom: 15px;
+        }
+
+        .slider-label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.2em;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .game-state {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .grid-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+
+        .grid {
+            display: inline-grid;
+            gap: 2px;
+            padding: 10px;
+            background: #333;
+            border-radius: 8px;
+        }
+
+        .tile {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .tile.empty { background: #e0e0e0; color: #999; }
+        .tile.building { background: #8BC34A; color: white; }
+        .tile.building-high { background: #FFB300; color: white; }
+        .tile.power-plant { background: #FFD700; color: #333; }
+        .tile.boulder { background: #5D4037; color: white; }
+        .tile.spike { background: #F44336; color: white; }
+        .tile.mud { background: #795548; color: white; }
+        .tile.out { background: #212121; color: #666; }
+        .tile.bed-r { background: #ffcdd2; color: #c62828; border: 3px solid #c62828; }
+        .tile.bed-g { background: #c8e6c9; color: #2e7d32; border: 3px solid #2e7d32; }
+        .tile.bed-b { background: #bbdefb; color: #1565c0; border: 3px solid #1565c0; }
+
+        .cat-red {
+            background: linear-gradient(135deg, #ef5350 0%, #c62828 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(239, 83, 80, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        .cat-green {
+            background: linear-gradient(135deg, #66bb6a 0%, #2e7d32 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 187, 106, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        .cat-blue {
+            background: linear-gradient(135deg, #42a5f5 0%, #1565c0 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .info-panel {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+
+        .cat-info {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+
+        .cat-info.red { border-color: #c62828; }
+        .cat-info.green { border-color: #2e7d32; }
+        .cat-info.blue { border-color: #1565c0; }
+
+        .cat-name {
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+
+        .cat-stat {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .cat-stat strong {
+            color: #333;
+        }
+
+        .legend {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .legend-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .legend-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 900px) {
+            .game-state {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐱 Cat Kaiju Simulator 🏙️</h1>
+        <p class="subtitle">Interactive Game State Visualizer</p>
+
+        <div class="controls">
+            <div class="slider-container">
+                <label class="slider-label">Turn: <span id="turn-display">0 (Initial State)</span></label>
+                <input type="range" id="turn-slider" min="0" max="15" value="0" step="1">
+            </div>
+            <div class="button-group">
+                <button onclick="previousTurn()">⏮️ Previous</button>
+                <button onclick="playPause()" id="play-btn">▶️ Play</button>
+                <button onclick="nextTurn()">Next ⏭️</button>
+                <button onclick="reset()">🔄 Reset</button>
+            </div>
+        </div>
+
+        <div class="game-state">
+            <div class="grid-container">
+                <h3 style="margin-bottom: 15px;">Game Grid</h3>
+                <div id="grid" class="grid"></div>
+            </div>
+
+            <div class="info-panel">
+                <h3 style="margin-bottom: 15px;">Cat Status</h3>
+                <div id="cat-info"></div>
+                <div class="score-display" id="total-score">
+                    Total Score: 0
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-title">Legend</div>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-box cat-red">r</div>
+                    <span>Red Cat</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box cat-green">g</div>
+                    <span>Green Cat</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box cat-blue">b</div>
+                    <span>Blue Cat</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box building">🏢</div>
+                    <span>Normal Building (250)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box building-high">🏢</div>
+                    <span>High-Value Building (500)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box power-plant">P</div>
+                    <span>Power Plant</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box boulder">R</div>
+                    <span>Boulder</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box spike">S</div>
+                    <span>Spike Trap</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box out">#</div>
+                    <span>Out of Bounds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let gameStates = [];
+        let currentTurn = 0;
+        let isPlaying = false;
+        let playInterval = null;
+
+        // Parse the simulation output file
+        async function loadSimulationData() {
+            try {
+                const response = await fetch('simulation_output.txt');
+                const text = await response.text();
+                parseSimulationOutput(text);
+                displayTurn(0);
+            } catch (error) {
+                alert('Error loading simulation_output.txt. Make sure the file exists in the same directory.');
+                console.error(error);
+            }
+        }
+
+        function parseSimulationOutput(text) {
+            const lines = text.split('\n');
+            let currentState = null;
+            let gridLines = [];
+            let catData = {};
+            let collectingGrid = false;
+            let expectedGridRows = 0;
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+
+                // Detect turn markers
+                if (line.includes('INITIAL STATE')) {
+                    if (currentState && currentState.grid.length > 0) {
+                        gameStates.push(currentState);
+                    }
+                    currentState = { turn: 0, cats: {}, grid: [] };
+                    catData = {};
+                    gridLines = [];
+                    collectingGrid = false;
+                } else if (line.match(/^TURN \d+$/)) {
+                    if (currentState && currentState.grid.length > 0) {
+                        gameStates.push(currentState);
+                    }
+                    const turnNum = parseInt(line.match(/\d+/)[0]);
+                    currentState = { turn: turnNum, cats: {}, grid: [] };
+                    catData = {};
+                    gridLines = [];
+                    collectingGrid = false;
+                } else if (line.startsWith('Cat(')) {
+                    // Parse cat data: Cat(BLUE, Power=3000, Pos=(0, 0), Status=ACTIVE)
+                    const match = line.match(/Cat\((\w+), Power=(\d+), Pos=\((\d+), (\d+)\), Status=(\w+)\)/);
+                    if (match) {
+                        const [_, color, power, x, y, status] = match;
+                        catData[color] = {
+                            power: parseInt(power),
+                            x: parseInt(x),
+                            y: parseInt(y),
+                            status: status
+                        };
+                    }
+                } else if (line === 'Grid:') {
+                    gridLines = [];
+                    collectingGrid = true;
+                    // Peek ahead to determine grid size
+                    if (i + 1 < lines.length) {
+                        const nextLine = lines[i + 1].trim();
+                        const tokens = nextLine.split(/\s+/);
+                        if (tokens.length > 0) {
+                            // Assume we need to collect rows until we hit an empty line or separator
+                            expectedGridRows = 5; // Default from layout
+                        }
+                    }
+                } else if (collectingGrid && line.length > 0 && !line.startsWith('=')) {
+                    // Grid line - split by whitespace
+                    const tokens = line.split(/\s+/).filter(t => t.length > 0);
+                    if (tokens.length > 0) {
+                        gridLines.push(tokens);
+                        if (gridLines.length >= expectedGridRows) {
+                            collectingGrid = false;
+                            if (currentState) {
+                                currentState.grid = gridLines.map(row => [...row]);
+                                currentState.cats = { ...catData };
+                            }
+                        }
+                    }
+                } else if (line.startsWith('=') && gridLines.length > 0) {
+                    // Hit a separator, finalize grid
+                    collectingGrid = false;
+                    if (currentState && currentState.grid.length === 0) {
+                        currentState.grid = gridLines.map(row => [...row]);
+                        currentState.cats = { ...catData };
+                    }
+                } else if (line.includes('SIMULATION COMPLETE')) {
+                    if (currentState && currentState.grid.length > 0) {
+                        gameStates.push(currentState);
+                    }
+                    break;
+                }
+            }
+
+            // Add final state if not already added
+            if (currentState && !gameStates.find(s => s.turn === currentState.turn)) {
+                if (currentState.grid.length === 0 && gridLines.length > 0) {
+                    currentState.grid = gridLines;
+                }
+                currentState.cats = { ...catData };
+                if (currentState.grid.length > 0) {
+                    gameStates.push(currentState);
+                }
+            }
+
+            console.log(`Loaded ${gameStates.length} game states`);
+            if (gameStates.length > 0) {
+                console.log(`Grid dimensions: ${gameStates[0].grid.length}x${gameStates[0].grid[0].length}`);
+            }
+        }
+
+        function displayTurn(turn) {
+            currentTurn = turn;
+            const state = gameStates[turn];
+
+            if (!state) return;
+
+            // Update slider and display
+            document.getElementById('turn-slider').value = turn;
+            document.getElementById('turn-display').textContent =
+                turn === 0 ? '0 (Initial State)' : turn;
+
+            // Render grid
+            renderGrid(state.grid);
+
+            // Render cat info
+            renderCatInfo(state.cats);
+
+            // Calculate total score
+            const totalScore = Object.values(state.cats).reduce((sum, cat) => sum + cat.power, 0);
+            document.getElementById('total-score').textContent = `Total Score: ${totalScore.toLocaleString()}`;
+        }
+
+        function renderGrid(grid) {
+            const gridElement = document.getElementById('grid');
+            gridElement.innerHTML = '';
+
+            if (!grid || grid.length === 0) return;
+
+            const rows = grid.length;
+            const cols = grid[0].length;
+
+            gridElement.style.gridTemplateColumns = `repeat(${cols}, 60px)`;
+            gridElement.style.gridTemplateRows = `repeat(${rows}, 60px)`;
+
+            for (let y = 0; y < rows; y++) {
+                for (let x = 0; x < cols; x++) {
+                    const cell = grid[y][x];
+                    const tile = document.createElement('div');
+                    tile.className = 'tile';
+
+                    // Determine tile type and content
+                    if (cell === 'r') {
+                        tile.classList.add('cat-red');
+                        tile.textContent = '🐱';
+                    } else if (cell === 'g') {
+                        tile.classList.add('cat-green');
+                        tile.textContent = '🐱';
+                    } else if (cell === 'b') {
+                        tile.classList.add('cat-blue');
+                        tile.textContent = '🐱';
+                    } else if (cell === 'H2' || cell === 'H') {
+                        tile.classList.add('building-high');
+                        tile.textContent = '🏢';
+                    } else if (cell === 'H1') {
+                        tile.classList.add('building-high');
+                        tile.textContent = '🏢';
+                    } else if (cell === 'N2' || cell === 'N') {
+                        tile.classList.add('building');
+                        tile.textContent = '🏢';
+                    } else if (cell === 'N1') {
+                        tile.classList.add('building');
+                        tile.textContent = '🏢';
+                    } else if (cell === 'P') {
+                        tile.classList.add('power-plant');
+                        tile.textContent = '⚡';
+                    } else if (cell === 'UI_R') {
+                        tile.classList.add('bed-r');
+                        tile.textContent = '🛏️';
+                    } else if (cell === 'UI_G') {
+                        tile.classList.add('bed-g');
+                        tile.textContent = '🛏️';
+                    } else if (cell === 'UI_B') {
+                        tile.classList.add('bed-b');
+                        tile.textContent = '🛏️';
+                    } else if (cell === 'R') {
+                        tile.classList.add('boulder');
+                        tile.textContent = '🪨';
+                    } else if (cell === 'S') {
+                        tile.classList.add('spike');
+                        tile.textContent = '⚠️';
+                    } else if (cell === 'M') {
+                        tile.classList.add('mud');
+                        tile.textContent = '💧';
+                    } else if (cell === '#') {
+                        tile.classList.add('out');
+                        tile.textContent = '#';
+                    } else {
+                        tile.classList.add('empty');
+                        tile.textContent = '';
+                    }
+
+                    gridElement.appendChild(tile);
+                }
+            }
+        }
+
+        function renderCatInfo(cats) {
+            const infoElement = document.getElementById('cat-info');
+            infoElement.innerHTML = '';
+
+            const catOrder = ['RED', 'GREEN', 'BLUE'];
+            const catColors = { RED: 'red', GREEN: 'green', BLUE: 'blue' };
+            const catEmojis = { RED: '🔴', GREEN: '🟢', BLUE: '🔵' };
+
+            catOrder.forEach(catId => {
+                if (cats[catId]) {
+                    const cat = cats[catId];
+                    const div = document.createElement('div');
+                    div.className = `cat-info ${catColors[catId]}`;
+                    div.innerHTML = `
+                        <div class="cat-name">${catEmojis[catId]} ${catId} Cat</div>
+                        <div class="cat-stat"><strong>Power:</strong> ${cat.power.toLocaleString()}</div>
+                        <div class="cat-stat"><strong>Position:</strong> (${cat.x}, ${cat.y})</div>
+                        <div class="cat-stat"><strong>Status:</strong> ${cat.status}</div>
+                    `;
+                    infoElement.appendChild(div);
+                }
+            });
+        }
+
+        function nextTurn() {
+            if (currentTurn < gameStates.length - 1) {
+                displayTurn(currentTurn + 1);
+            }
+        }
+
+        function previousTurn() {
+            if (currentTurn > 0) {
+                displayTurn(currentTurn - 1);
+            }
+        }
+
+        function reset() {
+            stopPlaying();
+            displayTurn(0);
+        }
+
+        function playPause() {
+            if (isPlaying) {
+                stopPlaying();
+            } else {
+                startPlaying();
+            }
+        }
+
+        function startPlaying() {
+            isPlaying = true;
+            document.getElementById('play-btn').textContent = '⏸️ Pause';
+            playInterval = setInterval(() => {
+                if (currentTurn < gameStates.length - 1) {
+                    nextTurn();
+                } else {
+                    stopPlaying();
+                    reset();
+                }
+            }, 1000);
+        }
+
+        function stopPlaying() {
+            isPlaying = false;
+            document.getElementById('play-btn').textContent = '▶️ Play';
+            if (playInterval) {
+                clearInterval(playInterval);
+                playInterval = null;
+            }
+        }
+
+        // Slider event listener
+        document.getElementById('turn-slider').addEventListener('input', (e) => {
+            stopPlaying();
+            displayTurn(parseInt(e.target.value));
+        });
+
+        // Load data on page load
+        window.addEventListener('load', loadSimulationData);
+    </script>
+</body>
+</html>
