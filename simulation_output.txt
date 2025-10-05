@@ -6,11 +6,11 @@ Cat(RED, Power=1000, Pos=(0, 2), Status=ACTIVE)
 Cat(GREEN, Power=2000, Pos=(0, 4), Status=ACTIVE)
 
 Grid:
-b H1 N1 . N1 P #
-# H1 . R N1 H1 UI_R
-r N1 H1 R S H1 UI_G
-# H1 P . M . UI_B
-g N1 N1 . N1 N1 #
+b H2 N2 . N1 P #
+# H1 . R N2 UI_R UI_R
+r N2 H2 R S H1 UI_G
+# H2 P . M . UI_B
+g N1 N2 . N1 N2 #
 
 ============================================================
 TURN 1
@@ -20,11 +20,11 @@ Cat(RED, Power=1250, Pos=(1, 2), Status=ACTIVE)
 Cat(GREEN, Power=2250, Pos=(1, 4), Status=ACTIVE)
 
 Grid:
-. b N1 . N1 P #
-# H1 . R N1 H1 UI_R
-. r H1 R S H1 UI_G
-# H1 P . M . UI_B
-. g N1 . N1 N1 #
+. b N2 . N1 P #
+# H1 . R N2 UI_R UI_R
+. r H2 R S H1 UI_G
+# H2 P . M . UI_B
+. g N2 . N1 N2 #
 
 ============================================================
 TURN 2
@@ -34,11 +34,11 @@ Cat(RED, Power=1750, Pos=(2, 2), Status=ACTIVE)
 Cat(GREEN, Power=2500, Pos=(2, 4), Status=ACTIVE)
 
 Grid:
-. . b . N1 P #
-# H1 . R N1 H1 UI_R
-. . r R S H1 UI_G
-# H1 P . M . UI_B
-. . g . N1 N1 #
+. H1 b . N1 P #
+# H1 . R N2 UI_R UI_R
+. N1 r R S H1 UI_G
+# H2 P . M . UI_B
+. . g . N1 N2 #
 
 ============================================================
 TURN 3
@@ -48,185 +48,185 @@ Cat(RED, Power=1750, Pos=(2, 2), Status=ACTIVE)
 Cat(GREEN, Power=2500, Pos=(3, 4), Status=ACTIVE)
 
 Grid:
-. . . b N1 P #
-# H1 . R N1 H1 UI_R
-. . r R S H1 UI_G
-# H1 P . M . UI_B
-. . . g N1 N1 #
+. H1 N1 b N1 P #
+# H1 . R N2 UI_R UI_R
+. N1 r R S H1 UI_G
+# H2 P . M . UI_B
+. . N1 g N1 N2 #
 
 ============================================================
 TURN 4
 ============================================================
 Cat(BLUE, Power=4000, Pos=(4, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(1, 2), Status=ACTIVE)
+Cat(RED, Power=2000, Pos=(1, 2), Status=ACTIVE)
 Cat(GREEN, Power=2750, Pos=(4, 4), Status=ACTIVE)
 
 Grid:
-. . . . b P #
-# H1 . R N1 H1 UI_R
-. r . R S H1 UI_G
-# H1 P . M . UI_B
-. . . . g N1 #
+. H1 N1 . b P #
+# H1 . R N2 UI_R UI_R
+. r H1 R S H1 UI_G
+# H2 P . M . UI_B
+. . N1 . g N2 #
 
 ============================================================
 TURN 5
 ============================================================
 Cat(BLUE, Power=8000, Pos=(5, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(0, 2), Status=ACTIVE)
+Cat(RED, Power=2000, Pos=(0, 2), Status=ACTIVE)
 Cat(GREEN, Power=3000, Pos=(5, 4), Status=ACTIVE)
 
 Grid:
-. . . . . b #
-# H1 . R N1 H1 UI_R
-r . . R S H1 UI_G
-# H1 P . M . UI_B
-. . . . . g #
+. H1 N1 . . b #
+# H1 . R N2 UI_R UI_R
+r . H1 R S H1 UI_G
+# H2 P . M . UI_B
+. . N1 . . g #
 
 ============================================================
 TURN 6
 ============================================================
 Cat(BLUE, Power=8000, Pos=(5, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(0, 2), Status=ACTIVE)
+Cat(RED, Power=2000, Pos=(0, 2), Status=ACTIVE)
 Cat(GREEN, Power=3000, Pos=(5, 4), Status=ACTIVE)
 
 Grid:
-. . . . . b #
-# H1 . R N1 H1 UI_R
-r . . R S H1 UI_G
-# H1 P . M . UI_B
-. . . . . g #
+. H1 N1 . . b #
+# H1 . R N2 UI_R UI_R
+r . H1 R S H1 UI_G
+# H2 P . M . UI_B
+. . N1 . . g #
 
 ============================================================
 TURN 7
 ============================================================
 Cat(BLUE, Power=8000, Pos=(4, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(1, 2), Status=ACTIVE)
+Cat(RED, Power=2000, Pos=(1, 2), Status=ACTIVE)
 Cat(GREEN, Power=3000, Pos=(4, 4), Status=ACTIVE)
 
 Grid:
-. . . . b . #
-# H1 . R N1 H1 UI_R
-. r . R S H1 UI_G
-# H1 P . M . UI_B
-. . . . g . #
+. H1 N1 . b . #
+# H1 . R N2 UI_R UI_R
+. r H1 R S H1 UI_G
+# H2 P . M . UI_B
+. . N1 . g N1 #
 
 ============================================================
 TURN 8
 ============================================================
 Cat(BLUE, Power=8000, Pos=(3, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(2, 2), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(2, 2), Status=ACTIVE)
 Cat(GREEN, Power=3000, Pos=(3, 4), Status=ACTIVE)
 
 Grid:
-. . . b . . #
-# H1 . R N1 H1 UI_R
+. H1 N1 b . . #
+# H1 . R N2 UI_R UI_R
 . . r R S H1 UI_G
-# H1 P . M . UI_B
-. . . g . . #
+# H2 P . M . UI_B
+. . N1 g . N1 #
 
 ============================================================
 TURN 9
 ============================================================
-Cat(BLUE, Power=8000, Pos=(2, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(2, 2), Status=ACTIVE)
-Cat(GREEN, Power=3000, Pos=(2, 4), Status=ACTIVE)
+Cat(BLUE, Power=8250, Pos=(2, 0), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(2, 2), Status=ACTIVE)
+Cat(GREEN, Power=3250, Pos=(2, 4), Status=ACTIVE)
 
 Grid:
-. . b . . . #
-# H1 . R N1 H1 UI_R
+. H1 b . . . #
+# H1 . R N2 UI_R UI_R
 . . r R S H1 UI_G
-# H1 P . M . UI_B
-. . g . . . #
+# H2 P . M . UI_B
+. . g . . N1 #
 
 ============================================================
 TURN 10
 ============================================================
-Cat(BLUE, Power=8000, Pos=(1, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(1, 2), Status=ACTIVE)
-Cat(GREEN, Power=3000, Pos=(1, 4), Status=ACTIVE)
+Cat(BLUE, Power=8750, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(1, 2), Status=ACTIVE)
+Cat(GREEN, Power=3250, Pos=(1, 4), Status=ACTIVE)
 
 Grid:
 . b . . . . #
-# H1 . R N1 H1 UI_R
+# H1 . R N2 UI_R UI_R
 . r . R S H1 UI_G
-# H1 P . M . UI_B
-. g . . . . #
+# H2 P . M . UI_B
+. g . . . N1 #
 
 ============================================================
 TURN 11
 ============================================================
-Cat(BLUE, Power=8000, Pos=(0, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(0, 2), Status=ACTIVE)
-Cat(GREEN, Power=3000, Pos=(0, 4), Status=ACTIVE)
+Cat(BLUE, Power=8750, Pos=(0, 0), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(0, 2), Status=ACTIVE)
+Cat(GREEN, Power=3250, Pos=(0, 4), Status=ACTIVE)
 
 Grid:
 b . . . . . #
-# H1 . R N1 H1 UI_R
+# H1 . R N2 UI_R UI_R
 r . . R S H1 UI_G
-# H1 P . M . UI_B
-g . . . . . #
+# H2 P . M . UI_B
+g . . . . N1 #
 
 ============================================================
 TURN 12
 ============================================================
-Cat(BLUE, Power=8000, Pos=(0, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(0, 2), Status=ACTIVE)
-Cat(GREEN, Power=3000, Pos=(0, 4), Status=ACTIVE)
+Cat(BLUE, Power=8750, Pos=(0, 0), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(0, 2), Status=ACTIVE)
+Cat(GREEN, Power=3250, Pos=(0, 4), Status=ACTIVE)
 
 Grid:
 b . . . . . #
-# H1 . R N1 H1 UI_R
+# H1 . R N2 UI_R UI_R
 r . . R S H1 UI_G
-# H1 P . M . UI_B
-g . . . . . #
+# H2 P . M . UI_B
+g . . . . N1 #
 
 ============================================================
 TURN 13
 ============================================================
-Cat(BLUE, Power=8000, Pos=(1, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(1, 2), Status=ACTIVE)
-Cat(GREEN, Power=3000, Pos=(1, 4), Status=ACTIVE)
+Cat(BLUE, Power=8750, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(1, 2), Status=ACTIVE)
+Cat(GREEN, Power=3250, Pos=(1, 4), Status=ACTIVE)
 
 Grid:
 . b . . . . #
-# H1 . R N1 H1 UI_R
+# H1 . R N2 UI_R UI_R
 . r . R S H1 UI_G
-# H1 P . M . UI_B
-. g . . . . #
+# H2 P . M . UI_B
+. g . . . N1 #
 
 ============================================================
 TURN 14
 ============================================================
-Cat(BLUE, Power=8000, Pos=(2, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(2, 2), Status=ACTIVE)
-Cat(GREEN, Power=3000, Pos=(2, 4), Status=ACTIVE)
+Cat(BLUE, Power=8750, Pos=(2, 0), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(2, 2), Status=ACTIVE)
+Cat(GREEN, Power=3250, Pos=(2, 4), Status=ACTIVE)
 
 Grid:
 . . b . . . #
-# H1 . R N1 H1 UI_R
+# H1 . R N2 UI_R UI_R
 . . r R S H1 UI_G
-# H1 P . M . UI_B
-. . g . . . #
+# H2 P . M . UI_B
+. . g . . N1 #
 
 ============================================================
 TURN 15
 ============================================================
-Cat(BLUE, Power=8000, Pos=(3, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(2, 2), Status=ACTIVE)
-Cat(GREEN, Power=3000, Pos=(3, 4), Status=ACTIVE)
+Cat(BLUE, Power=8750, Pos=(3, 0), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(2, 2), Status=ACTIVE)
+Cat(GREEN, Power=3250, Pos=(3, 4), Status=ACTIVE)
 
 Grid:
 . . . b . . #
-# H1 . R N1 H1 UI_R
+# H1 . R N2 UI_R UI_R
 . . r R S H1 UI_G
-# H1 P . M . UI_B
-. . . g . . #
+# H2 P . M . UI_B
+. . . g . N1 #
 
 ============================================================
 SIMULATION COMPLETE
 ============================================================
-Cat(BLUE, Power=8000, Pos=(3, 0), Status=ACTIVE)
-Cat(RED, Power=1750, Pos=(2, 2), Status=ACTIVE)
-Cat(GREEN, Power=3000, Pos=(3, 4), Status=ACTIVE)
+Cat(BLUE, Power=8750, Pos=(3, 0), Status=ACTIVE)
+Cat(RED, Power=2500, Pos=(2, 2), Status=ACTIVE)
+Cat(GREEN, Power=3250, Pos=(3, 4), Status=ACTIVE)
 
-Final Total Score: 12750
+Final Total Score: 14500

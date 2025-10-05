@@ -41,8 +41,10 @@ The starting state is a 2D array in Python list format. Here's the example layou
 |------|-------------|--------|
 | `C_R_S`, `C_G_S`, `C_B_S` | Cat Starting Position | Red/Green/Blue cat starts here |
 | `C_R_E`, `C_G_E`, `C_B_E` | Cat Bed (Destination) | Arrival bonuses: 1st=+2000, 2nd=×3, 3rd=×5 |
-| `B` | Low-Value Building | +250 power when destroyed |
-| `BU` | High-Value Building | +500 power when destroyed |
+| `B` | Low-Value Building (1 floor) | +250 power when destroyed |
+| `B2` | Low-Value Building (2 floors) | +250 power per floor (500 total) |
+| `BU` | High-Value Building (1 floor) | +500 power when destroyed |
+| `BU2` | High-Value Building (2 floors) | +500 power per floor (1000 total) |
 | `BS` | Power Plant | ×2 power when destroyed |
 | `E` | Empty Tile | Passable, no effects |
 | `R` | Boulder | Impassable, cats rebound (reverse direction) |
@@ -90,11 +92,22 @@ simulator.place_command(1, 0, "DOWN")
 ```
 
 **Important**: Commands can ONLY be placed on:
-- Low-Value Buildings (`B`)
-- High-Value Buildings (`BU`)
+- Low-Value Buildings (`B`, `B2`)
+- High-Value Buildings (`BU`, `BU2`)
 - Power Plants (`BS`)
 
 Commands trigger when a cat enters the tile.
+
+## Multi-Floor Buildings
+
+Buildings can have 1 or 2 floors:
+- **Single-floor buildings** (`B`, `BU`): Destroyed after one cat passes through
+- **Two-floor buildings** (`B2`, `BU2`): Require two separate cat visits to fully destroy
+  - First cat destroys one floor and gets points
+  - Second cat (can be same or different) destroys second floor and gets points
+  - Both floors have the same value (both low or both high)
+
+Example: A `BU2` building gives +500 points to the first cat that hits it, then +500 points to the next cat that hits it (1000 total).
 
 ## Example Output
 
@@ -116,7 +129,8 @@ Grid:
 
 Grid symbols:
 - `b`, `r`, `g` = Blue, Red, Green cat (lowercase)
-- `B` = Undestroyed building
+- `N2`, `N1` = Low-value building with 2 or 1 floors remaining
+- `H2`, `H1` = High-value building with 2 or 1 floors remaining
 - `P` = Power plant
 - `R` = Boulder
 - `S` = Spike trap

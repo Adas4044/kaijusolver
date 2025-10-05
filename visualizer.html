@@ -328,11 +328,19 @@
                 </div>
                 <div class="legend-item">
                     <div class="legend-box building">🏢</div>
-                    <span>Normal Building (250)</span>
+                    <span>Normal Building (250/floor)</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-box building-high">🏢</div>
-                    <span>High-Value Building (500)</span>
+                    <span>High-Value Building (500/floor)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box building" style="position:relative;">🏢<span style="position:absolute;top:0px;right:0px;font-size:0.5em;background:white;border-radius:50%;width:14px;height:14px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#333;">2</span></div>
+                    <span>2 Floors (requires 2 hits)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box building" style="position:relative;">🏢<span style="position:absolute;top:0px;right:0px;font-size:0.5em;background:white;border-radius:50%;width:14px;height:14px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#333;">1</span></div>
+                    <span>1 Floor (requires 1 hit)</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-box power-plant">P</div>
@@ -521,16 +529,22 @@
                     } else if (cell === 'b') {
                         tile.classList.add('cat-blue');
                         tile.textContent = '🐱';
-                    } else if (cell === 'H2' || cell === 'H') {
+                    } else if (cell === 'H2') {
                         tile.classList.add('building-high');
-                        tile.textContent = '🏢';
+                        tile.innerHTML = '🏢<span style="position:absolute;top:2px;right:4px;font-size:0.6em;background:rgba(255,255,255,0.9);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#333;">2</span>';
                     } else if (cell === 'H1') {
                         tile.classList.add('building-high');
+                        tile.innerHTML = '🏢<span style="position:absolute;top:2px;right:4px;font-size:0.6em;background:rgba(255,255,255,0.9);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#333;">1</span>';
+                    } else if (cell === 'H') {
+                        tile.classList.add('building-high');
                         tile.textContent = '🏢';
-                    } else if (cell === 'N2' || cell === 'N') {
+                    } else if (cell === 'N2') {
                         tile.classList.add('building');
-                        tile.textContent = '🏢';
+                        tile.innerHTML = '🏢<span style="position:absolute;top:2px;right:4px;font-size:0.6em;background:rgba(255,255,255,0.9);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#333;">2</span>';
                     } else if (cell === 'N1') {
+                        tile.classList.add('building');
+                        tile.innerHTML = '🏢<span style="position:absolute;top:2px;right:4px;font-size:0.6em;background:rgba(255,255,255,0.9);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#333;">1</span>';
+                    } else if (cell === 'N') {
                         tile.classList.add('building');
                         tile.textContent = '🏢';
                     } else if (cell === 'P') {

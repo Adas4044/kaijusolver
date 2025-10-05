@@ -172,7 +172,9 @@ class GameSimulator:
     TILE_MAP = {
         "E": lambda: Tile(TileType.EMPTY),
         "B": lambda: BuildingTile(TileType.LOW_VALUE_BUILDING, 250, floors=1),
+        "B2": lambda: BuildingTile(TileType.LOW_VALUE_BUILDING, 250, floors=2),
         "BU": lambda: BuildingTile(TileType.HIGH_VALUE_BUILDING, 500, floors=1),
+        "BU2": lambda: BuildingTile(TileType.HIGH_VALUE_BUILDING, 500, floors=2),
         "BS": lambda: PowerPlantTile(),
         "R": lambda: Tile(TileType.BOULDER),
         "S1": lambda: SpikeTrapTile(),
