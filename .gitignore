@@ -24,7 +24,5 @@ Thumbs.db
 solutions/
 *.solution.txt
 
-# Rust
-kevin/debug
-kevin/target
-kevin/.idea
+# Cpp
+kevin/cmake-build-debug
