@@ -142,15 +142,15 @@ class Cat {
         switch (color) {
             case RED:
                 this.hierarchy = 1;
-                this.initialPower = 1000;
+                this.initialPower = 0;
                 break;
             case GREEN:
                 this.hierarchy = 2;
-                this.initialPower = 2000;
+                this.initialPower = 0;
                 break;
             case BLUE:
                 this.hierarchy = 3;
-                this.initialPower = 3000;
+                this.initialPower = 0;
                 break;
             default:
                 this.hierarchy = 0;
