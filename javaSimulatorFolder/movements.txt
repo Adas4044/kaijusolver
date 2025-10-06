@@ -1,0 +1,49 @@
+# Kaiju Cats - Grid-Based Movement Commands
+# This grid mirrors your board layout (starting.txt)
+#
+# Command Codes:
+#   L = Turn Left (West)    - Cat turns west ($10)
+#   R = Turn Right (East)   - Cat turns east ($10)
+#   U = Turn Up (North)     - Cat turns north ($10)
+#   D = Turn Down (South)   - Cat turns south ($10)
+#   P = Powerup             - Double cat power ($30)
+#   S = Stomp               - Loop and execute again ($20)
+#
+# For SINGLE-FLOOR buildings/plants: Use 1 character (e.g., 'D', 'P', 'S')
+# For MULTI-FLOOR buildings: Use 2 characters (e.g., 'UD', 'RL', 'SS')
+#   - First character = TOP floor (executes first)
+#   - Second character = BOTTOM floor (executes second)
+#
+# Only add commands where buildings (h/hh/H/HH) or power plants (P) exist!
+# Use '.' for tiles without commands
+#
+# Budget: $200 total
+#
+# Example grid:
+#   .   D   .   .   .   P   .    <- Blue cat turns Down at (1,0), Powerup at (5,0)
+#   .   UD  .   .   .   .   .    <- Multi-floor: Up(top), Down(bottom) at (1,1)
+#   .   .   L   .   .   .   .    <- Red cat turns Left at (2,2)
+#
+# ================================================================
+# YOUR BOARD LAYOUT (for reference):
+# ================================================================
+#
+# BStart  H       h       .       h       P       #       
+# #       H       .       X       h       H       RBed    
+# RStart  hh      H       X       S       H       GBed    
+# #       H       P       .       M       .       BBed    
+# GStart  h       h       .       h       h       #       
+#
+# ================================================================
+# MOVEMENT GRID (edit below - Java array format like starting.txt):
+# ================================================================
+
+String[][] movements = {
+    {".", ".D", "L", ".", ".", ".", "."},
+    {".", ".", ".", ".", ".", ".", "."},
+    {".", "..", ".", ".", ".", ".", "."},
+    {".", ".", ".", ".", ".", ".", "."},
+    {".", ".", ".", ".", ".", ".", "."}
+};
+
+# Remember: Only place commands where buildings or power plants exist!

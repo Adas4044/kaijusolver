@@ -1,0 +1,5 @@
+BStart  H   h   .   h   P   #
+#       H   .   X   h   H   RBed
+RStart  hh  H   X   S   H   GBed
+#       H   P   .   M   .   BBed
+GStart  h   h   .   h   h   #
