@@ -154,7 +154,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 2250  Dir=↑  Pos=(5,3)  Status=ACTIVE[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 2750  Dir=→  Pos=(4,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -175,7 +175,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 2750  Dir=→  Pos=(5,2)  Status=ACTIVE[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 2750  Dir=→  Pos=(5,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -196,7 +196,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 4750  Dir=→  Pos=(6,2)  Status=FINISHED[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 2750  Dir=←  Pos=(5,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -217,7 +217,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 4750  Dir=→  Pos=(6,2)  Status=FINISHED[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 2750  Dir=←  Pos=(4,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -238,7 +238,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 4750  Dir=→  Pos=(6,2)  Status=FINISHED[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 2750  Dir=←  Pos=(3,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -259,7 +259,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 4750  Dir=→  Pos=(6,2)  Status=FINISHED[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 2750  Dir=←  Pos=(2,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -280,7 +280,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 4750  Dir=→  Pos=(6,2)  Status=FINISHED[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 3000  Dir=←  Pos=(1,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -301,7 +301,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 4750  Dir=→  Pos=(6,2)  Status=FINISHED[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 3000  Dir=←  Pos=(0,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -322,7 +322,7 @@
 └──────────────────────────────────────────────────────────────────────────────┘
 
 [32mGREEN : Power= 4750  Dir=→  Pos=(6,2)  Status=FINISHED[0m
-[34mBLUE  : Power= 1250  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
+[34mBLUE  : Power=    0  Dir=←  Pos=(4,0)  Status=DEFEATED[0m
 [31mRED   : Power= 3000  Dir=→  Pos=(0,0)  Status=ACTIVE[0m
 
    0   1   2   3   4   5   6   
@@ -343,9 +343,9 @@
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 [32mGREEN  Cat: Power=  4750  Status=FINISHED    Position=(6,2)[0m
-[34mBLUE   Cat: Power=  1250  Status=DEFEATED    Position=(4,0)[0m
+[34mBLUE   Cat: Power=     0  Status=DEFEATED    Position=(4,0)[0m
 [31mRED    Cat: Power=  3000  Status=ACTIVE      Position=(0,0)[0m
 
-Total Score: 9000
+Total Score: 7750
 Budget Used: $120 / $200
 

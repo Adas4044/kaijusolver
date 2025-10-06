@@ -188,6 +188,10 @@ class Cat {
         this.currentPower += amount;
     }
 
+    public void setPower(int power) {
+        this.currentPower = power;
+    }
+
     public void multiplyPower(int multiplier) {
         this.currentPower *= multiplier;
     }

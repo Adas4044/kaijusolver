@@ -298,6 +298,7 @@ public class GameSimulator {
                 for (Cat cat : catsAtTile) {
                     if (cat != winner) {
                         cat.setStatus(CatStatus.DEFEATED);
+                        cat.setPower(0); // Defeated cats lose all power
                     }
                 }
             }
