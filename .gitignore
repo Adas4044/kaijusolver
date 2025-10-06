@@ -23,3 +23,8 @@ Thumbs.db
 # Solutions
 solutions/
 *.solution.txt
+
+# Rust
+kevin/debug
+kevin/target
+kevin/.idea
