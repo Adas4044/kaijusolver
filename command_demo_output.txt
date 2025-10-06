@@ -1,0 +1,200 @@
+============================================================
+INITIAL STATE
+============================================================
+Cat(BLUE, Power=3000, Pos=(0, 0), Status=ACTIVE)
+Cat(RED, Power=1000, Pos=(0, 1), Status=ACTIVE)
+Cat(GREEN, Power=2000, Pos=(0, 2), Status=ACTIVE)
+
+Grid:
+b H2 N2 N1 H1 UI_B
+r N1 H1 . N1 UI_R
+g N2 N1 H2 N1 UI_G
+
+============================================================
+TURN 1
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1250, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 2), Status=ACTIVE)
+
+Grid:
+. b N2 N1 H1 UI_B
+. r H1 . N1 UI_R
+. g N1 H2 N1 UI_G
+
+============================================================
+TURN 2
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 1), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 0), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. r N2 N1 H1 UI_B
+. b H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 3
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. b N2 N1 H1 UI_B
+. r H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 4
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 1), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 0), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. r N2 N1 H1 UI_B
+. b H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 5
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. b N2 N1 H1 UI_B
+. r H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 6
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 1), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 0), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. r N2 N1 H1 UI_B
+. b H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 7
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. b N2 N1 H1 UI_B
+. r H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 8
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 1), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 0), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. r N2 N1 H1 UI_B
+. b H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 9
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. b N2 N1 H1 UI_B
+. r H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 10
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 1), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 0), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. r N2 N1 H1 UI_B
+. b H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 11
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. b N2 N1 H1 UI_B
+. r H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 12
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 1), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 0), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. r N2 N1 H1 UI_B
+. b H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 13
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. b N2 N1 H1 UI_B
+. r H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 14
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 1), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 0), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. r N2 N1 H1 UI_B
+. b H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+TURN 15
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Grid:
+. b N2 N1 H1 UI_B
+. r H1 . N1 UI_R
+. N1 N1 H2 N1 UI_G
+
+============================================================
+SIMULATION COMPLETE
+============================================================
+Cat(BLUE, Power=3500, Pos=(1, 0), Status=ACTIVE)
+Cat(RED, Power=1750, Pos=(1, 1), Status=ACTIVE)
+Cat(GREEN, Power=2250, Pos=(1, 1), Status=DEFEATED)
+
+Final Total Score: 7500

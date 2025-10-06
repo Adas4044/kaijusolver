@@ -55,34 +55,8 @@ TURN 1 - Red hits first floor of B2:
 
 After the first hit, the B2 building changes from `N2` → `N1` showing it has 1 floor remaining.
 
-## Files Modified
 
-1. **`simulator.py`** - Added `B2` and `BU2` to TILE_MAP
-2. **`README.md`** - Updated documentation with new building codes
-3. **`FLOORS_FEATURE.md`** - Comprehensive feature documentation
-4. **`test_multifloor.py`** - Test suite demonstrating the feature
 
-## Files Created
-
-- `test_floors.txt` - Test layout with multi-floor buildings
-- `multifloor_demo.txt` - Demo layout
-- `demo_multifloor.txt` - Simple demo
-- `test_multifloor.py` - Unit tests for the feature
-- `FLOORS_FEATURE.md` - Detailed documentation
-
-## Testing
-
-All tests pass ✅:
-- Original test suite: 4/4 tests passing
-- Multi-floor tests: 3/3 tests passing
-
-Run tests with:
-```bash
-python3 -m unittest test_simulator.py -v
-python3 test_multifloor.py
-```
-
-## Strategic Impact
 
 Two-floor buildings add new strategy considerations:
 - **Higher total value**: A BU2 is worth 1000 points total (vs 500 for BU)
