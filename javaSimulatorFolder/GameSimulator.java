@@ -261,6 +261,9 @@ public class GameSimulator {
 
         Map<Position, List<Cat>> tileOccupants = new HashMap<>();
 
+        // Store which cats rebounded (hit boundary/wall)
+        Set<Cat> reboundedCats = new HashSet<>();
+
         for (CatMovement movement : movements) {
             Cat cat = movement.cat;
             int targetX = movement.targetX;
@@ -275,6 +278,7 @@ public class GameSimulator {
                 // Stay at current position
                 Position currentPos = new Position(cat.getX(), cat.getY());
                 tileOccupants.computeIfAbsent(currentPos, k -> new ArrayList<>()).add(cat);
+                reboundedCats.add(cat);
                 continue;
             }
 
@@ -313,17 +317,18 @@ public class GameSimulator {
                 continue;
             }
 
-            int targetX = movement.targetX;
-            int targetY = movement.targetY;
-            Tile targetTile = getTile(targetX, targetY);
+            // Rebounded cats apply effects from their current position
+            int effectX = cat.getX();
+            int effectY = cat.getY();
+            Tile effectTile = getTile(effectX, effectY);
 
             // Apply tile effects only to surviving cats
-            if (targetTile != null && targetTile.isPassable()) {
-                targetTile.applyEffects(cat);
+            if (effectTile != null && effectTile.isPassable()) {
+                effectTile.applyEffects(cat);
 
                 // Check for cat bed arrival
-                if (targetTile instanceof CatBedTile) {
-                    CatBedTile bedTile = (CatBedTile) targetTile;
+                if (effectTile instanceof CatBedTile) {
+                    CatBedTile bedTile = (CatBedTile) effectTile;
                     if (bedTile.getAssociatedCat() == cat.getColor()) {
                         cat.setStatus(CatStatus.FINISHED);
                         globalBedArrivalCounter++;
