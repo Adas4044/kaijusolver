@@ -84,6 +84,7 @@ enum CatColor {
 enum CatStatus {
     ACTIVE,
     STUCK_MUD,
+    STOMPING,
     FINISHED,
     DEFEATED
 }
@@ -427,8 +428,8 @@ class BuildingTile extends Tile {
 
     @Override
     public void applyEffects(Cat cat) {
-        // Execute commands in a loop to handle STOMP
-        while (remainingFloors > 0) {
+        // Only destroy floor if we have floors remaining
+        if (remainingFloors > 0) {
             // Get top floor command
             Command cmd = commandsPerFloor.get(remainingFloors - 1);
 
@@ -441,15 +442,7 @@ class BuildingTile extends Tile {
             // Execute command if present
             if (cmd != null) {
                 executeCommand(cmd, cat);
-
-                // If command is STOMP and there are more floors, continue loop
-                if (cmd.getType() == CommandType.STOMP && remainingFloors > 0) {
-                    continue;
-                }
             }
-
-            // Normal exit after one floor
-            break;
         }
     }
 
@@ -462,7 +455,10 @@ class BuildingTile extends Tile {
                 cat.setDirection(cmd.getDirection());
                 break;
             case STOMP:
-                // Handled in the loop - just continue stomping
+                // Set cat to STOMPING status if there are more floors to destroy
+                if (remainingFloors > 0) {
+                    cat.setStatus(CatStatus.STOMPING);
+                }
                 break;
             case POWERUP:
                 cat.multiplyPower(2);

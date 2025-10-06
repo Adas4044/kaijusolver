@@ -243,6 +243,15 @@ public class GameSimulator {
             } else if (cat.getStatus() == CatStatus.STUCK_MUD) {
                 // Cat is stuck, skip movement but clear stuck status
                 cat.setStatus(CatStatus.ACTIVE);
+            } else if (cat.getStatus() == CatStatus.STOMPING) {
+                // Cat is stomping, stay in place and destroy next floor
+                Tile currentTile = getTile(cat.getX(), cat.getY());
+                if (currentTile != null) {
+                    // Apply effects to destroy next floor
+                    currentTile.applyEffects(cat);
+                }
+                // Stomping only lasts one turn, then return to active
+                cat.setStatus(CatStatus.ACTIVE);
             }
         }
 
