@@ -1,5 +1,5 @@
-BStart  hh   hh   HH   hh   .   #
-#       .   M   P   h   hh   RBed
-RStart  HH  hh   .   S   HH   GBed
-#       .   P   X   hh   hh   BBed
-GStart  HH   hh   .   P   hh   #
+BStart  HH   hh   hh   .   P   #
+#       .   hh   P   M   hh   RBed
+RStart  hh  S   hh   .   HH   GBed
+#       .   hh   HH   X   P   BBed
+GStart  HH   .   hh   hh   HH   #
