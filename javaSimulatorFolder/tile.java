@@ -461,7 +461,7 @@ class BuildingTile extends Tile {
                 }
                 break;
             case POWERUP:
-                cat.multiplyPower(2);
+                cat.addPower(1000);
                 break;
         }
     }
@@ -547,7 +547,7 @@ class PowerPlantTile extends Tile {
                 cat.setDirection(cmd.getDirection());
                 break;
             case POWERUP:
-                cat.multiplyPower(2); // Additional 2x
+                cat.addPower(1000); // Add 1000 power
                 break;
             case STOMP:
                 // No effect on power plant (single use)

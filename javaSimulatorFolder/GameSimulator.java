@@ -281,33 +281,12 @@ public class GameSimulator {
             // Move cat to target position
             cat.setPosition(targetX, targetY);
 
-            // Apply tile effects
-            targetTile.applyEffects(cat);
-
-            // Check for cat bed arrival
-            if (targetTile instanceof CatBedTile) {
-                CatBedTile bedTile = (CatBedTile) targetTile;
-                if (bedTile.getAssociatedCat() == cat.getColor()) {
-                    cat.setStatus(CatStatus.FINISHED);
-                    globalBedArrivalCounter++;
-
-                    // Apply arrival bonus
-                    if (globalBedArrivalCounter == 1) {
-                        cat.addPower(2000);
-                    } else if (globalBedArrivalCounter == 2) {
-                        cat.multiplyPower(3);
-                    } else if (globalBedArrivalCounter == 3) {
-                        cat.multiplyPower(5);
-                    }
-                }
-            }
-
             // Track occupants for fight resolution
             Position targetPos = new Position(targetX, targetY);
             tileOccupants.computeIfAbsent(targetPos, k -> new ArrayList<>()).add(cat);
         }
 
-        // Phase 3: Fight Resolution
+        // Phase 3: Fight Resolution (BEFORE tile effects)
         for (List<Cat> catsAtTile : tileOccupants.values()) {
             if (catsAtTile.size() > 1) {
                 // Find winner (highest power, ties broken by hierarchy)
@@ -319,6 +298,43 @@ public class GameSimulator {
                 for (Cat cat : catsAtTile) {
                     if (cat != winner) {
                         cat.setStatus(CatStatus.DEFEATED);
+                    }
+                }
+            }
+        }
+
+        // Phase 4: Apply Tile Effects (AFTER combat, only for non-defeated cats)
+        for (CatMovement movement : movements) {
+            Cat cat = movement.cat;
+            
+            // Skip defeated cats
+            if (cat.getStatus() == CatStatus.DEFEATED) {
+                continue;
+            }
+
+            int targetX = movement.targetX;
+            int targetY = movement.targetY;
+            Tile targetTile = getTile(targetX, targetY);
+
+            // Apply tile effects only to surviving cats
+            if (targetTile != null && targetTile.isPassable()) {
+                targetTile.applyEffects(cat);
+
+                // Check for cat bed arrival
+                if (targetTile instanceof CatBedTile) {
+                    CatBedTile bedTile = (CatBedTile) targetTile;
+                    if (bedTile.getAssociatedCat() == cat.getColor()) {
+                        cat.setStatus(CatStatus.FINISHED);
+                        globalBedArrivalCounter++;
+
+                        // Apply arrival bonus
+                        if (globalBedArrivalCounter == 1) {
+                            cat.addPower(2000);
+                        } else if (globalBedArrivalCounter == 2) {
+                            cat.multiplyPower(3);
+                        } else if (globalBedArrivalCounter == 3) {
+                            cat.multiplyPower(5);
+                        }
                     }
                 }
             }
