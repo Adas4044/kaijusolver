@@ -1,0 +1,4 @@
+# Simple 5x3 Test Map
+BStart  HH   P    hh   RBed
+#       hh   S    M    GBed  
+GStart  P    X    hh   BBed

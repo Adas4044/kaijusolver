@@ -1,0 +1,6 @@
+# Test movements for test_small.txt
+String[][] movements = {
+    {".", "SP", "P", ".", "."},
+    {".", "U", ".", ".", "."},
+    {".", "P", ".", "D", "."}
+};

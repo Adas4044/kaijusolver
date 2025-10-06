@@ -1,0 +1,83 @@
+╔════════════════════════════════════════════════╗
+║   Multithreaded Optimal Solver                 ║
+╚════════════════════════════════════════════════╝
+
+Threads: 8
+Map: starting_simple.txt
+Initial Temperature: 100000.0
+Cooling Rate: 0.9999995
+Max Iterations per thread: 20000000
+Total iterations: 160000000
+
+Grid: 7x5
+Valid tiles: 17
+
+Starting optimization on 8 threads...
+
+✨ Thread 6 found NEW BEST at iter 1: Score 7562 (cost $30, 1 commands)
+✨ Thread 4 found NEW BEST at iter 6: Score 8625 (cost $40, 4 commands)
+✨ Thread 4 found NEW BEST at iter 9: Score 9625 (cost $70, 5 commands)
+✨ Thread 6 found NEW BEST at iter 3: Score 9750 (cost $50, 3 commands)
+✨ Thread 2 found NEW BEST at iter 11: Score 10750 (cost $60, 4 commands)
+✨ Thread 2 found NEW BEST at iter 12: Score 11000 (cost $70, 5 commands)
+✨ Thread 5 found NEW BEST at iter 35: Score 11250 (cost $150, 8 commands)
+✨ Thread 7 found NEW BEST at iter 35: Score 11687 (cost $120, 7 commands)
+✨ Thread 7 found NEW BEST at iter 37: Score 11750 (cost $120, 7 commands)
+✨ Thread 6 found NEW BEST at iter 42: Score 14250 (cost $150, 9 commands)
+✨ Thread 6 found NEW BEST at iter 45: Score 14500 (cost $160, 10 commands)
+✨ Thread 2 found NEW BEST at iter 131: Score 15750 (cost $140, 8 commands)
+✨ Thread 5 found NEW BEST at iter 194: Score 16500 (cost $190, 12 commands)
+✨ Thread 6 found NEW BEST at iter 298: Score 17250 (cost $190, 11 commands)
+✨ Thread 5 found NEW BEST at iter 350: Score 18812 (cost $140, 8 commands)
+✨ Thread 6 found NEW BEST at iter 416: Score 21562 (cost $180, 9 commands)
+✨ Thread 6 found NEW BEST at iter 419: Score 22937 (cost $190, 9 commands)
+✨ Thread 6 found NEW BEST at iter 790: Score 23500 (cost $180, 11 commands)
+✨ Thread 6 found NEW BEST at iter 2900: Score 27562 (cost $140, 9 commands)
+✨ Thread 6 found NEW BEST at iter 2902: Score 31562 (cost $160, 9 commands)
+✨ Thread 6 found NEW BEST at iter 10642: Score 32000 (cost $170, 11 commands)
+✨ Thread 2 found NEW BEST at iter 47690: Score 35812 (cost $180, 10 commands)
+✨ Thread 3 found NEW BEST at iter 92902: Score 40999 (cost $200, 12 commands)
+✨ Thread 2 found NEW BEST at iter 356271: Score 41250 (cost $180, 11 commands)
+✨ Thread 2 found NEW BEST at iter 356274: Score 47500 (cost $190, 10 commands)
+🔄 Thread 0: Restart #100 (temp reset to 100000.0)
+✨ Thread 5 found NEW BEST at iter 1335278: Score 54750 (cost $160, 11 commands)
+✨ Thread 5 found NEW BEST at iter 1335279: Score 56250 (cost $190, 11 commands)
+🔄 Thread 0: Restart #200 (temp reset to 100000.0)
+🔄 Thread 0: Restart #300 (temp reset to 100000.0)
+🔄 Thread 0: Restart #400 (temp reset to 100000.0)
+🔄 Thread 0: Restart #500 (temp reset to 100000.0)
+🔄 Thread 0: Restart #600 (temp reset to 100000.0)
+🔄 Thread 0: Restart #700 (temp reset to 100000.0)
+🔄 Thread 0: Restart #800 (temp reset to 100000.0)
+🔄 Thread 0: Restart #900 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1000 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1100 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1200 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1300 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1400 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1500 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1600 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1700 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1800 (temp reset to 100000.0)
+✨ Thread 1 found NEW BEST at iter 18485498: Score 57125 (cost $200, 11 commands)
+✨ Thread 1 found NEW BEST at iter 18485499: Score 59125 (cost $200, 11 commands)
+🔄 Thread 0: Restart #1900 (temp reset to 100000.0)
+
+═════════════════════════════════════════════════════════════════════════════════════
+OPTIMIZATION COMPLETE!
+═════════════════════════════════════════════════════════════════════════════════════
+Total time: 249 seconds
+Total iterations: 160000000
+Global improvements: 29
+
+🏆 BEST SOLUTION:
+  Score: 59125
+  Cost: $200 / $200
+  Commands: 11
+
+  Breakdown:
+    Turns: 6 × $10 = $60
+    Stomps: 1 × $20 = $20
+    Powerups: 4 × $30 = $120
+
+✅ Saved to: movements_optimal.txt

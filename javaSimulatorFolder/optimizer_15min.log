@@ -1,0 +1,101 @@
+╔════════════════════════════════════════════════╗
+║   Multithreaded Optimal Solver                 ║
+╚════════════════════════════════════════════════╝
+
+Threads: 8
+Map: starting_simple.txt
+Initial Temperature: 100000.0
+Cooling Rate: 0.9999995
+Max Iterations per thread: 50000000
+Total iterations: 400000000
+
+Grid: 7x5
+Valid tiles: 17
+
+Starting optimization on 8 threads...
+
+✨ Thread 2 found NEW BEST at iter 1: Score 8625 (cost $10, 1 commands)
+✨ Thread 5 found NEW BEST at iter 27: Score 9062 (cost $50, 2 commands)
+✨ Thread 0 found NEW BEST at iter 5: Score 11250 (cost $50, 3 commands)
+✨ Thread 6 found NEW BEST at iter 47: Score 12250 (cost $200, 12 commands)
+✨ Thread 2 found NEW BEST at iter 51: Score 21062 (cost $170, 7 commands)
+✨ Thread 7 found NEW BEST at iter 2029: Score 22375 (cost $170, 9 commands)
+✨ Thread 5 found NEW BEST at iter 2156: Score 31374 (cost $190, 10 commands)
+✨ Thread 6 found NEW BEST at iter 18709: Score 38000 (cost $170, 10 commands)
+✨ Thread 0 found NEW BEST at iter 73374: Score 38750 (cost $170, 11 commands)
+✨ Thread 2 found NEW BEST at iter 371187: Score 41250 (cost $200, 12 commands)
+✨ Thread 3 found NEW BEST at iter 699695: Score 42250 (cost $200, 10 commands)
+🔄 Thread 0: Restart #100 (temp reset to 100000.0)
+✨ Thread 7 found NEW BEST at iter 1489101: Score 43750 (cost $200, 11 commands)
+✨ Thread 6 found NEW BEST at iter 1935390: Score 50500 (cost $200, 14 commands)
+🔄 Thread 0: Restart #200 (temp reset to 100000.0)
+🔄 Thread 0: Restart #300 (temp reset to 100000.0)
+🔄 Thread 0: Restart #400 (temp reset to 100000.0)
+🔄 Thread 0: Restart #500 (temp reset to 100000.0)
+✨ Thread 5 found NEW BEST at iter 5153900: Score 51500 (cost $180, 11 commands)
+🔄 Thread 0: Restart #600 (temp reset to 100000.0)
+🔄 Thread 0: Restart #700 (temp reset to 100000.0)
+✨ Thread 2 found NEW BEST at iter 7054186: Score 53500 (cost $200, 11 commands)
+🔄 Thread 0: Restart #800 (temp reset to 100000.0)
+🔄 Thread 0: Restart #900 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1000 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1100 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1200 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1300 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1400 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1500 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1600 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1700 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1800 (temp reset to 100000.0)
+🔄 Thread 0: Restart #1900 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2000 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2100 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2200 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2300 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2400 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2500 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2600 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2700 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2800 (temp reset to 100000.0)
+🔄 Thread 0: Restart #2900 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3000 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3100 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3200 (temp reset to 100000.0)
+✨ Thread 1 found NEW BEST at iter 32711445: Score 54000 (cost $180, 11 commands)
+🔄 Thread 0: Restart #3300 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3400 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3500 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3600 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3700 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3800 (temp reset to 100000.0)
+🔄 Thread 0: Restart #3900 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4000 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4100 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4200 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4300 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4400 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4500 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4600 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4700 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4800 (temp reset to 100000.0)
+🔄 Thread 0: Restart #4900 (temp reset to 100000.0)
+✨ Thread 6 found NEW BEST at iter 49366125: Score 54250 (cost $180, 12 commands)
+
+═════════════════════════════════════════════════════════════════════════════════════
+OPTIMIZATION COMPLETE!
+═════════════════════════════════════════════════════════════════════════════════════
+Total time: 631 seconds
+Total iterations: 400000000
+Global improvements: 17
+
+🏆 BEST SOLUTION:
+  Score: 54250
+  Cost: $180 / $200
+  Commands: 12
+
+  Breakdown:
+    Turns: 8 × $10 = $80
+    Stomps: 2 × $20 = $40
+    Powerups: 2 × $30 = $60
+
+✅ Saved to: movements_optimal.txt
