@@ -2,4 +2,4 @@ BStart  hh   hh   .   HH   P   #
 #       hh   S   hh   .   P   RBed
 RStart  hh  hh   .   X   HH   GBed
 #       HH   P   M   .   HH   BBed
-GStart  HH   hh   .   hh   HH   #
+GStart  HH   hh   .   hh   hh   #
