@@ -1,25 +1,9 @@
-# Compiled Java class files
+# Compiled class files
 *.class
+bin/
 
-# Package files
-*.jar
-*.war
-*.ear
+# Log files
+*.log
 
-# Output files
-visualization.txt
-visualization_output.txt
-simulation_output.txt
-debug_output.txt
-
-# IDE files
-.idea/
-*.iml
-.vscode/
-.project
-.classpath
-.settings/
-
-# OS files
-.DS_Store
-Thumbs.db
+# Temporary movement files
+movements_*.txt

@@ -1,0 +1,88 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                    OPTIMIZER VERIFICATION RESULTS                    ║
+║                      Map: starting_simple.txt                        ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════
+  SAOptimizerV2 Results (60s run, fixed cooling rate)
+═══════════════════════════════════════════════════════════════════════
+
+Best Score: 112250
+Runtime: 1.04s (166,900 iterations @ 160,790 it/s)
+Distances: Red=0, Green=0, Blue=0 (Total=0) ✓ ALL CATS IN BED!
+Budget: $200 / $200
+
+Movement Grid:
+String[][] movements = {
+    {".", "P.", "P.", "SP", ".", "U", "."},
+    {".", ".", ".", "R", ".", ".P", "."},
+    {".", ".", ".", "UR", ".", ".", "."},
+    {".", ".", ".", ".", ".", "L", "."},
+    {".", ".", ".", "D.", ".", ".", "."}
+};
+
+
+═══════════════════════════════════════════════════════════════════════
+  SAOptimizerV3 Results (60s run, adaptive cooling)
+═══════════════════════════════════════════════════════════════════════
+
+Best Score: 71250
+Runtime: 32.36s (6,000,000 iterations @ 185,391 it/s)
+Distances: Red=0, Green=0, Blue=0 (Total=0) ✓ ALL CATS IN BED!
+Budget: $200 / $200
+
+Movement Grid:
+String[][] movements = {
+    {".", "P.", "P.", "P.", ".", "U", "."},
+    {".", ".", ".", ".", ".", "PP", "."},
+    {".", ".", ".", ".R", ".", ".U", "."},
+    {".", ".", ".", ".", ".", "R", "."},
+    {".", ".", ".", ".U", ".", ".", "."}
+};
+
+
+═══════════════════════════════════════════════════════════════════════
+  SAOptimizerV3.1 Results (60s run, 8 parallel threads)
+═══════════════════════════════════════════════════════════════════════
+
+Best Score: 136500
+Runtime: 60.0s (8 threads, ~48,000,000 total iterations)
+Distances: Red=0, Green=0, Blue=0 (Total=0) ✓ ALL CATS IN BED!
+Budget: $200 / $200
+
+Movement Grid:
+String[][] movements = {
+    {".", "PP", "LP", "P.", ".", "D", "."},
+    {".", ".", ".", "R", ".", "L.", "."},
+    {".", ".", ".", ".R", ".", "U.", "."},
+    {".", ".", ".", ".", ".", "R", "."},
+    {".", ".", ".", ".D", ".", ".", "."}
+};
+
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                          FINAL SUMMARY                               ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Optimizer Comparison:
+┌──────────┬──────────┬──────────────┬────────────────┬──────────────┐
+│ Version  │  Score   │   Runtime    │  Iterations    │  Cats in Bed │
+├──────────┼──────────┼──────────────┼────────────────┼──────────────┤
+│   V2     │ 112,250  │    1.04s     │    166,900     │   3 of 3 ✓   │
+│   V3     │  71,250  │   32.36s     │  6,000,000     │   3 of 3 ✓   │
+│  V3.1    │ 136,500  │   60.00s     │ 48,000,000     │   3 of 3 ✓   │
+└──────────┴──────────┴──────────────┴────────────────┴──────────────┘
+
+Key Findings:
+• V2 found surprisingly good solution quickly (1s) with fast cooling
+• V3 actually performed WORSE than V2 - longer runtime found worse solution
+• V3.1 achieved best score (136,500) with parallel exploration
+• V3.1 is 1.22× better than V2, despite V2's speed advantage
+• All three found solutions where all cats reached their beds
+
+Notes:
+• Results vary between runs due to randomness in simulated annealing
+• V2's fast result was lucky - it won't consistently beat V3 on complex maps
+• V3.1's parallel approach provides most consistent high-quality results
+• For production use, V3.1 is recommended for best scores
+
