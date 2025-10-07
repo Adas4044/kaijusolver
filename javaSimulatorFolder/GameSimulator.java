@@ -376,6 +376,49 @@ public class GameSimulator {
                 .sum();
     }
 
+    /**
+     * Run simulation and return score + distances to beds for optimization
+     * Returns: [score, redDistance, greenDistance, blueDistance]
+     */
+    public int[] runSimulationWithDistances() {
+        // Run simulation
+        for (int i = 1; i <= turnLimit; i++) {
+            simulateTurn();
+
+            // Check if all cats are finished or defeated
+            if (cats.values().stream().allMatch(cat ->
+                    cat.getStatus() == CatStatus.FINISHED || cat.getStatus() == CatStatus.DEFEATED)) {
+                break;
+            }
+        }
+
+        // Calculate score
+        int score = cats.values().stream()
+                .mapToInt(Cat::getCurrentPower)
+                .sum();
+
+        // Calculate manhattan distances to beds
+        int redDist = getManhattanDistanceToBed(CatColor.RED);
+        int greenDist = getManhattanDistanceToBed(CatColor.GREEN);
+        int blueDist = getManhattanDistanceToBed(CatColor.BLUE);
+
+        return new int[]{score, redDist, greenDist, blueDist};
+    }
+
+    private int getManhattanDistanceToBed(CatColor color) {
+        Cat cat = cats.get(color);
+        Position bed = catBeds.get(color);
+
+        if (cat == null || bed == null) return 0;
+
+        // If cat finished or defeated, distance is 0
+        if (cat.getStatus() == CatStatus.FINISHED || cat.getStatus() == CatStatus.DEFEATED) {
+            return 0;
+        }
+
+        return Math.abs(cat.getX() - bed.x) + Math.abs(cat.getY() - bed.y);
+    }
+
     public int runSimulation(boolean verbose, String outputFile) {
         List<String> outputLines = new ArrayList<>();
 

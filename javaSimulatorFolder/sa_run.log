@@ -1,0 +1,74 @@
+Valid tiles: 17, Budget: $200
+Tuned for HIGH SCORES - Distance penalty: 500.0
+Target runtime: 60s (~1800000 iterations)
+
+
+╔══════════════════════════════════════════════╗
+║   Simulated Annealing V2 - HIGH SCORE MODE  ║
+╚══════════════════════════════════════════════╝
+
+Initial: Score=10062, Dist=[6,7,6], Fit=562
+[1 @ 0.0s] NEW BEST! Score=11062, Dist=[6,7,6], Cost=$130
+[6 @ 0.0s] NEW BEST! Score=11562, Dist=[6,7,7], Cost=$150
+[14 @ 0.0s] NEW BEST! Score=12562, Dist=[6,6,7], Cost=$190
+[16 @ 0.0s] NEW BEST! Score=12687, Dist=[6,2,7], Cost=$170
+[29 @ 0.0s] NEW BEST! Score=19500, Dist=[0,1,6], Cost=$200
+[37 @ 0.0s] NEW BEST! Score=20500, Dist=[0,1,6], Cost=$180
+[90 @ 0.0s] NEW BEST! Score=24250, Dist=[4,1,6], Cost=$190
+[135 @ 0.0s] NEW BEST! Score=25250, Dist=[4,1,6], Cost=$190
+[151 @ 0.0s] NEW BEST! Score=26250, Dist=[4,1,6], Cost=$200
+[153 @ 0.0s] NEW BEST! Score=26750, Dist=[4,2,6], Cost=$200
+[158 @ 0.0s] NEW BEST! Score=27500, Dist=[4,1,5], Cost=$200
+[160 @ 0.0s] NEW BEST! Score=29250, Dist=[6,2,5], Cost=$200
+[346 @ 0.0s] NEW BEST! Score=29500, Dist=[2,3,0], Cost=$200
+[350 @ 0.0s] NEW BEST! Score=33250, Dist=[6,0,6], Cost=$200
+[646 @ 0.0s] NEW BEST! Score=72750, Dist=[0,0,3], Cost=$170
+[680 @ 0.0s] NEW BEST! Score=73750, Dist=[0,0,5], Cost=$200
+[696 @ 0.0s] NEW BEST! Score=79750, Dist=[0,0,5], Cost=$200
+[1073 @ 0.0s] NEW BEST! Score=85750, Dist=[0,0,5], Cost=$200
+[1536 @ 0.1s] NEW BEST! Score=91750, Dist=[0,0,5], Cost=$200
+[5000 @ 0.1s] Best=91750, Dist=[0,0,5], Temp=129.3, Accept=20.1%, Speed=35461/s
+[10000 @ 0.3s] Best=91750, Dist=[0,0,5], Temp=111.3, Accept=17.3%, Speed=38911/s
+[15000 @ 0.3s] Best=91750, Dist=[0,0,5], Temp=95.8, Accept=16.8%, Speed=43103/s
+[20000 @ 0.4s] Best=91750, Dist=[0,0,5], Temp=82.4, Accept=16.5%, Speed=48193/s
+[25000 @ 0.5s] Best=91750, Dist=[0,0,5], Temp=70.9, Accept=16.8%, Speed=52966/s
+[30000 @ 0.5s] Best=91750, Dist=[0,0,5], Temp=61.0, Accept=16.5%, Speed=58594/s
+[35000 @ 0.5s] Best=91750, Dist=[0,0,5], Temp=52.5, Accept=16.7%, Speed=64220/s
+[40000 @ 0.6s] Best=91750, Dist=[0,0,5], Temp=45.2, Accept=16.1%, Speed=69085/s
+[45000 @ 0.6s] Best=91750, Dist=[0,0,5], Temp=38.9, Accept=16.6%, Speed=73409/s
+[50000 @ 0.7s] Best=91750, Dist=[0,0,5], Temp=33.5, Accept=15.9%, Speed=76220/s
+[55000 @ 0.7s] Best=91750, Dist=[0,0,5], Temp=28.8, Accept=16.8%, Speed=78797/s
+[60000 @ 0.7s] Best=91750, Dist=[0,0,5], Temp=24.8, Accept=16.3%, Speed=81967/s
+[65000 @ 0.8s] Best=91750, Dist=[0,0,5], Temp=21.3, Accept=16.8%, Speed=85079/s
+[70000 @ 0.8s] Best=91750, Dist=[0,0,5], Temp=18.4, Accept=16.5%, Speed=87610/s
+[75000 @ 0.8s] Best=91750, Dist=[0,0,5], Temp=15.8, Accept=16.9%, Speed=90253/s
+[80000 @ 0.9s] Best=91750, Dist=[0,0,5], Temp=13.6, Accept=17.5%, Speed=92807/s
+[85000 @ 0.9s] Best=91750, Dist=[0,0,5], Temp=11.7, Accept=16.7%, Speed=95078/s
+[90000 @ 0.9s] Best=91750, Dist=[0,0,5], Temp=10.1, Accept=17.6%, Speed=97403/s
+[95000 @ 1.0s] Best=91750, Dist=[0,0,5], Temp=8.7, Accept=17.2%, Speed=99581/s
+[100000 @ 1.0s] Best=91750, Dist=[0,0,5], Temp=7.5, Accept=16.4%, Speed=101523/s
+[105000 @ 1.0s] Best=91750, Dist=[0,0,5], Temp=6.4, Accept=17.7%, Speed=103346/s
+[110000 @ 1.0s] Best=91750, Dist=[0,0,5], Temp=5.5, Accept=16.9%, Speed=105062/s
+[115000 @ 1.1s] Best=91750, Dist=[0,0,5], Temp=4.8, Accept=16.0%, Speed=106778/s
+[120000 @ 1.1s] Best=91750, Dist=[0,0,5], Temp=4.1, Accept=16.4%, Speed=108303/s
+[125000 @ 1.1s] Best=91750, Dist=[0,0,5], Temp=3.5, Accept=17.6%, Speed=109745/s
+[130000 @ 1.2s] Best=91750, Dist=[0,0,5], Temp=3.0, Accept=17.2%, Speed=111206/s
+[135000 @ 1.2s] Best=91750, Dist=[0,0,5], Temp=2.6, Accept=16.8%, Speed=112219/s
+[140000 @ 1.2s] Best=91750, Dist=[0,0,5], Temp=2.2, Accept=16.9%, Speed=113636/s
+[145000 @ 1.3s] Best=91750, Dist=[0,0,5], Temp=1.9, Accept=16.7%, Speed=114715/s
+[150000 @ 1.3s] Best=91750, Dist=[0,0,5], Temp=1.7, Accept=15.8%, Speed=115830/s
+[155000 @ 1.3s] Best=91750, Dist=[0,0,5], Temp=1.4, Accept=17.3%, Speed=116981/s
+[160000 @ 1.4s] Best=91750, Dist=[0,0,5], Temp=1.2, Accept=17.0%, Speed=118081/s
+[165000 @ 1.4s] Best=91750, Dist=[0,0,5], Temp=1.1, Accept=16.0%, Speed=119134/s
+
+╔══════════════════════════════════════════════╗
+║              OPTIMIZATION COMPLETE!          ║
+╚══════════════════════════════════════════════╝
+
+Time: 1.40s (166900 iterations @ 119470 it/s)
+BEST SCORE: 91750
+Distances: Red=0, Green=0, Blue=5 (Total=5)
+Budget: $200 / $200
+✓ Saved to movements_best.txt
+
+✅ Verify: java TestSolution starting_simple.txt movements_best.txt
